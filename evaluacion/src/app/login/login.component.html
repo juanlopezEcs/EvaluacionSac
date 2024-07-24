@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Loggin</h1>
+  
+    <!-- Formulario para el loggin -->
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user" [(ngModel)]="userForm.userName" type="text" class="validate">
+          <label for="user">Usuario</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="pass" [(ngModel)]="userForm.pass" type="text" class="validate">
+            <label for="pass">Contraseña</label>
+          </div>
+      </div>
+        <button class="btn waves-effect waves-light" type="button" (click)="loggin()">
+          <i class="material-icons right">Ingresar</i>
+        </button>
+    </div>
+  </div>
+  

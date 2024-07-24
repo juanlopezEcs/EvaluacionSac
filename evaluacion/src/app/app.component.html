@@ -1,0 +1,70 @@
+
+<div class="container">
+  <h1>Usuarios</h1>
+
+  <!-- Formulario para crear usuario -->
+  <div class="row">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="user" [(ngModel)]="userForm.userName" type="text" class="validate">
+        <label for="user">Usuario</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="userGroup" [(ngModel)]="userForm.userGroup" type="text" class="validate">
+        <label for="userGroup">Grupo de usuario</label>
+      </div>
+    </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" [(ngModel)]="userForm.firstName" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" [(ngModel)]="userForm.lastName" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" [(ngModel)]="userForm.email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="date_of_birth" [(ngModel)]="userForm.dateOfBirth" type="date" class="datepicker">
+          <label for="date_of_birth">Date of Birth</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="pass" [(ngModel)]="userForm.pass" type="text" class="validate">
+          <label for="pass">Contraseña</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light col s6" type="button" (click)="addUser()">
+        <i class="material-icons right">send</i>
+      </button>
+      <a  class="btn waves-effect waves-light col s6" type="button" (click)="goLoggin()">
+        <i class="material-icons right">Loggin</i>
+      </a>
+  </div>
+
+  <!-- Tabla para mostrar usuarios -->
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.dateOfBirth }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
